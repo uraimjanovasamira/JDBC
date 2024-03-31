@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UserService {
+public class Service {
     public void createTable() {
         String query = """
                 CREATE TABLE cities
@@ -102,12 +102,4 @@ public class UserService {
         }
     }
 
-    public void dropTables() throws SQLException {
-        Connection connection = DataBaseConfig.getConnection();
-        Statement statement = connection.createStatement();
-        statement.execute("DROP TABLE countries");
-        statement.execute("DROP TABLE cities");
-        statement.execute("DROP TABLE presidents");
-        connection.close();
-    }
 }
